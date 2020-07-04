@@ -65,6 +65,9 @@
     },
     "api-user-shell": {
       "tags": ["scope:api", "scope:user", "type:shell"]
+    },
+    "api-shared-auth-utils": {
+      "tags": ["scope:api", "scope:auth", "type:utils"]
     }
   }
 }

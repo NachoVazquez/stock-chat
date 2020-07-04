@@ -1,16 +1,17 @@
 import { Test } from '@nestjs/testing';
-import { ApiUserShellController } from './user.controller';
 
-describe('ApiUserShellController', () => {
-  let controller: ApiUserShellController;
+import { UsersController } from './users.controller';
+
+describe('UsersController', () => {
+  let controller: UsersController;
 
   beforeEach(async () => {
     const module = await Test.createTestingModule({
       providers: [],
-      controllers: [ApiUserShellController],
+      controllers: [UsersController],
     }).compile();
 
-    controller = module.get(ApiUserShellController);
+    controller = module.get(UsersController);
   });
 
   it('should be defined', () => {

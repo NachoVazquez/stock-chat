@@ -1,9 +1,13 @@
-import { Module } from '@nestjs/common';
+import { MiddlewareConsumer, Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 
 import { ApiAuthShellModule } from '@stock-chat/api/auth/shell';
+import { GetUserMiddleware } from '@stock-chat/api/shared/auth/utils';
 import { environment } from '@stock-chat/api/shared/environments';
-import { ApiUserShellModule } from '@stock-chat/api/user/shell';
+import {
+  ApiUserShellModule,
+  UsersController,
+} from '@stock-chat/api/user/shell';
 
 @Module({
   imports: [
@@ -12,4 +16,8 @@ import { ApiUserShellModule } from '@stock-chat/api/user/shell';
     ApiUserShellModule,
   ],
 })
-export class ApiShellStockTalkApiModule {}
+export class ApiShellStockTalkApiModule {
+  configure(consumer: MiddlewareConsumer): void {
+    consumer.apply(GetUserMiddleware).forRoutes(UsersController);
+  }
+}

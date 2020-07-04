@@ -1,4 +1,5 @@
 import {
+  Body,
   Controller,
   HttpException,
   HttpStatus,
@@ -7,13 +8,17 @@ import {
 } from '@nestjs/common';
 
 import { AuthService } from '@stock-chat/api/auth/domain';
+import { User, UsersService } from '@stock-chat/api/shared/user/domain-user';
 
 @Controller('auth')
 export class AuthController {
-  constructor(private readonly authService: AuthService) {}
+  constructor(
+    private readonly authService: AuthService,
+    private readonly usersService: UsersService
+  ) {}
 
-  @Post('/login')
-  async login(@Request() req): Promise<any> {
+  @Post('/signin')
+  async signin(@Request() req): Promise<any> {
     const body = req.body;
 
     if (!body) {
@@ -27,6 +32,15 @@ export class AuthController {
     }
 
     return await this.authService.sign(body);
+  }
+
+  @Post('signup')
+  async signup(@Body() user: User) {
+    if (!user || (user && Object.keys(user).length === 0)) {
+      throw new HttpException('Missing informations', HttpStatus.BAD_REQUEST);
+    }
+
+    await this.usersService.create(user);
   }
 
   @Post('/refresh-token')

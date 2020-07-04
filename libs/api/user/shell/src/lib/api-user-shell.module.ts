@@ -3,7 +3,7 @@ import { Module } from '@nestjs/common';
 import { ApiSharedDomainUserModule } from '@stock-chat/api/shared/user/domain-user';
 import { ApiUserDataAccessModule } from '@stock-chat/api/user/data-access';
 
-import { UsersController } from './user.controller';
+import { UsersController } from './users.controller';
 
 @Module({
   imports: [ApiSharedDomainUserModule, ApiUserDataAccessModule],

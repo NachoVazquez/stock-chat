@@ -6,13 +6,15 @@ import {
   HttpException,
   HttpStatus,
   Param,
-  Post,
   Put,
+  UseGuards,
 } from '@nestjs/common';
 
+import { AuthenticationGuard } from '@stock-chat/api/shared/auth/utils';
 import { User, UsersService } from '@stock-chat/api/shared/user/domain-user';
 
 @Controller('users')
+@UseGuards(AuthenticationGuard)
 export class UsersController {
   constructor(private readonly usersService: UsersService) {}
 
@@ -39,15 +41,6 @@ export class UsersController {
     }
 
     return user;
-  }
-
-  @Post()
-  async create(@Body() user: User) {
-    if (!user || (user && Object.keys(user).length === 0)) {
-      throw new HttpException('Missing informations', HttpStatus.BAD_REQUEST);
-    }
-
-    await this.usersService.create(user);
   }
 
   @Put(':id')
