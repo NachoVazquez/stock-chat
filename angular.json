@@ -1,0 +1,141 @@
+{
+  "version": 1,
+  "projects": {
+    "stock-chat": {
+      "projectType": "application",
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "apps/stock-chat",
+      "sourceRoot": "apps/stock-chat/src",
+      "prefix": "stock-chat",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/stock-chat",
+            "index": "apps/stock-chat/src/index.html",
+            "main": "apps/stock-chat/src/main.ts",
+            "polyfills": "apps/stock-chat/src/polyfills.ts",
+            "tsConfig": "apps/stock-chat/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "apps/stock-chat/src/favicon.ico",
+              "apps/stock-chat/src/assets"
+            ],
+            "styles": ["apps/stock-chat/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/stock-chat/src/environments/environment.ts",
+                  "with": "apps/stock-chat/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "stock-chat:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "stock-chat:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "stock-chat:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/stock-chat/tsconfig.app.json",
+              "apps/stock-chat/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/stock-chat/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/stock-chat/jest.config.js",
+            "tsConfig": "apps/stock-chat/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "apps/stock-chat/src/test-setup.ts"
+          }
+        }
+      }
+    },
+    "stock-chat-e2e": {
+      "root": "apps/stock-chat-e2e",
+      "sourceRoot": "apps/stock-chat-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/stock-chat-e2e/cypress.json",
+            "tsConfig": "apps/stock-chat-e2e/tsconfig.e2e.json",
+            "devServerTarget": "stock-chat:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "stock-chat:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["apps/stock-chat-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/stock-chat-e2e/**/*"]
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "defaultCollection": "@nrwl/angular"
+  },
+  "schematics": {
+    "@nrwl/angular:application": {
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
+    },
+    "@nrwl/angular:library": {
+      "unitTestRunner": "jest"
+    }
+  },
+  "defaultProject": "stock-chat"
+}
