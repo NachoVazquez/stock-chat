@@ -91,8 +91,32 @@
         "allow": [],
         "depConstraints": [
           {
-            "sourceTag": "*",
-            "onlyDependOnLibsWithTags": ["*"]
+            "sourceTag": "scope:shared",
+            "onlyDependOnLibsWithTags": ["scope:shared"]
+          },
+          {
+            "sourceTag": "scope:api",
+            "onlyDependOnLibsWithTags": ["scope:api", "scope:cross"]
+          },
+          {
+            "sourceTag": "scope:auth",
+            "onlyDependOnLibsWithTags": ["scope:auth", "scope:shared"]
+          },
+          {
+            "sourceTag": "scope:user",
+            "onlyDependOnLibsWithTags": ["scope:user", "scope:shared"]
+          },
+          {
+            "sourceTag": "type:app",
+            "onlyDependOnLibsWithTags": ["type:shell"]
+          },
+          {
+            "sourceTag": "type:domain",
+            "onlyDependOnLibsWithTags": ["type:domain", "type:utils"]
+          },
+          {
+            "sourceTag": "type:domain",
+            "onlyDependOnLibsWithTags": ["type:domain", "type:utils"]
           }
         ]
       }
