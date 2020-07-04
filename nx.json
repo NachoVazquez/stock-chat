@@ -63,10 +63,16 @@
       "tags": ["scope:shared", "scope:api", "type:domain"]
     },
     "api-shared-auth-domain-jwt": {
-      "tags": ["scope:shared", "scope:api", "type:domain"]
+      "tags": ["scope:shared", "scope:api", "scope:auth", "type:domain"]
     },
     "api-shared-user-domain-user": {
-      "tags": ["scope:shared", "scope:api", "type:domain"]
+      "tags": ["scope:shared", "scope:api", "scope:user", "type:domain"]
+    },
+    "api-shared-assets": {
+      "tags": ["scope:api", "scope:shared", "type:assets"]
+    },
+    "api-shared-environments": {
+      "tags": ["scope:api", "scope:shared", "type:environments"]
     }
   }
 }

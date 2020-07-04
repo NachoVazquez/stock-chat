@@ -44,6 +44,10 @@
       ],
       "@stock-chat/api/shared/user/domain-user": [
         "libs/api/shared/user/domain-user/src/index.ts"
+      ],
+      "@stock-chat/api/shared/assets": ["libs/api/shared/assets/src/index.ts"],
+      "@stock-chat/api/shared/environments": [
+        "libs/api/shared/environments/src/index.ts"
       ]
     }
   },

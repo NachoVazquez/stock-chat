@@ -130,6 +130,7 @@
       "projectType": "application",
       "prefix": "stock-chat-api",
       "schematics": {},
+      "implicitDependencies": ["api-shared-assets", "api-shared-environments"],
       "architect": {
         "build": {
           "builder": "@nrwl/node:build",
@@ -137,7 +138,7 @@
             "outputPath": "dist/apps/stock-chat-api",
             "main": "apps/stock-chat-api/src/main.ts",
             "tsConfig": "apps/stock-chat-api/tsconfig.app.json",
-            "assets": ["apps/stock-chat-api/src/assets"]
+            "assets": ["libs/api/shared/assets/src"]
           },
           "configurations": {
             "production": {
@@ -146,8 +147,8 @@
               "inspect": false,
               "fileReplacements": [
                 {
-                  "replace": "apps/stock-chat-api/src/environments/environment.ts",
-                  "with": "apps/stock-chat-api/src/environments/environment.prod.ts"
+                  "replace": "libs/api/shared/environments/src/lib/environment.ts",
+                  "with": "libs/api/shared/environments/src/lib/environment.prod.ts"
                 }
               ]
             }
@@ -487,6 +488,42 @@
           "options": {
             "jestConfig": "libs/api/shared/user/domain-user/jest.config.js",
             "tsConfig": "libs/api/shared/user/domain-user/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "api-shared-assets": {
+      "root": "libs/api/shared/assets",
+      "sourceRoot": "libs/api/shared/assets/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {}
+    },
+    "api-shared-environments": {
+      "root": "libs/api/shared/environments",
+      "sourceRoot": "libs/api/shared/environments/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/api/shared/environments/tsconfig.lib.json",
+              "libs/api/shared/environments/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/api/shared/environments/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/api/shared/environments/jest.config.js",
+            "tsConfig": "libs/api/shared/environments/tsconfig.spec.json",
             "passWithNoTests": true
           }
         }

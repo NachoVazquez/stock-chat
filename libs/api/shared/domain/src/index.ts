@@ -1,1 +1,1 @@
-export * from './lib/api-shared-domain.module';
+export * from './lib/interfaces';

@@ -1,9 +1,10 @@
 import { Module } from '@nestjs/common';
-import { ApiSharedUserDomainUserService } from './api-shared-user-domain-user.service';
+
+import { UsersService } from './services';
 
 @Module({
   controllers: [],
-  providers: [ApiSharedUserDomainUserService],
-  exports: [ApiSharedUserDomainUserService],
+  providers: [UsersService],
+  exports: [UsersService],
 })
-export class ApiSharedUserDomainUserModule {}
+export class DomainUserModule {}

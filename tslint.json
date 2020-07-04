@@ -74,7 +74,7 @@
       "@angular/core/testing",
       "@angular/fire/database",
       "@angular/material",
-      "@nevco-one",
+      "@stock-chat",
       "zone.js"
     ],
     "no-string-literal": false,
