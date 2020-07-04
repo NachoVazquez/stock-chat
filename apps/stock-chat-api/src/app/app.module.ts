@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
 
-import { ApiShellStockTalkApiModule } from '@stock-chat/api/shell-stock-talk-api';
+import { ApiShellStockChatApiModule } from '@stock-chat/api/shell-stock-chat-api';
 
 @Module({
-  imports: [ApiShellStockTalkApiModule],
+  imports: [ApiShellStockChatApiModule],
 })
 export class AppModule {}

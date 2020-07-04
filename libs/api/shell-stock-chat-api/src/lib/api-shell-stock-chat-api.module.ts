@@ -21,7 +21,7 @@ import {
     ApiChannelsShellModule,
   ],
 })
-export class ApiShellStockTalkApiModule {
+export class ApiShellStockChatApiModule {
   configure(consumer: MiddlewareConsumer): void {
     consumer
       .apply(GetUserMiddleware)

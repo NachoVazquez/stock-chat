@@ -25,9 +25,7 @@
               "apps/stock-chat/src/favicon.ico",
               "apps/stock-chat/src/assets"
             ],
-            "styles": [
-              "apps/stock-chat/src/styles.scss"
-            ],
+            "styles": ["apps/stock-chat/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -85,10 +83,7 @@
               "apps/stock-chat/tsconfig.app.json",
               "apps/stock-chat/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/stock-chat/**/*"
-            ]
+            "exclude": ["**/node_modules/**", "!apps/stock-chat/**/*"]
           }
         },
         "test": {
@@ -123,13 +118,8 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "apps/stock-chat-e2e/tsconfig.e2e.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/stock-chat-e2e/**/*"
-            ]
+            "tsConfig": ["apps/stock-chat-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/stock-chat-e2e/**/*"]
           }
         }
       }
@@ -147,9 +137,7 @@
             "outputPath": "dist/apps/stock-chat-api",
             "main": "apps/stock-chat-api/src/main.ts",
             "tsConfig": "apps/stock-chat-api/tsconfig.app.json",
-            "assets": [
-              "apps/stock-chat-api/src/assets"
-            ]
+            "assets": ["apps/stock-chat-api/src/assets"]
           },
           "configurations": {
             "production": {
@@ -178,10 +166,7 @@
               "apps/stock-chat-api/tsconfig.app.json",
               "apps/stock-chat-api/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/stock-chat-api/**/*"
-            ]
+            "exclude": ["**/node_modules/**", "!apps/stock-chat-api/**/*"]
           }
         },
         "test": {
@@ -194,9 +179,9 @@
         }
       }
     },
-    "api-shell-stock-talk-api": {
-      "root": "libs/api/shell-stock-talk-api",
-      "sourceRoot": "libs/api/shell-stock-talk-api/src",
+    "api-shell-stock-chat-api": {
+      "root": "libs/api/shell-stock-chat-api",
+      "sourceRoot": "libs/api/shell-stock-chat-api/src",
       "projectType": "library",
       "schematics": {},
       "architect": {
@@ -204,20 +189,20 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "libs/api/shell-stock-talk-api/tsconfig.lib.json",
-              "libs/api/shell-stock-talk-api/tsconfig.spec.json"
+              "libs/api/shell-stock-chat-api/tsconfig.lib.json",
+              "libs/api/shell-stock-chat-api/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**",
-              "!libs/api/shell-stock-talk-api/**/*"
+              "!libs/api/shell-stock-chat-api/**/*"
             ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/api/shell-stock-talk-api/jest.config.js",
-            "tsConfig": "libs/api/shell-stock-talk-api/tsconfig.spec.json",
+            "jestConfig": "libs/api/shell-stock-chat-api/jest.config.js",
+            "tsConfig": "libs/api/shell-stock-chat-api/tsconfig.spec.json",
             "passWithNoTests": true
           }
         }
@@ -236,10 +221,7 @@
               "libs/api/auth/shell/tsconfig.lib.json",
               "libs/api/auth/shell/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/api/auth/shell/**/*"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/api/auth/shell/**/*"]
           }
         },
         "test": {
@@ -265,10 +247,7 @@
               "libs/api/shared/domain/tsconfig.lib.json",
               "libs/api/shared/domain/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/api/shared/domain/**/*"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/api/shared/domain/**/*"]
           }
         },
         "test": {
@@ -381,10 +360,7 @@
               "libs/api/auth/domain/tsconfig.lib.json",
               "libs/api/auth/domain/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/api/auth/domain/**/*"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/api/auth/domain/**/*"]
           }
         },
         "test": {
@@ -410,10 +386,7 @@
               "libs/api/user/shell/tsconfig.lib.json",
               "libs/api/user/shell/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/api/user/shell/**/*"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/api/user/shell/**/*"]
           }
         },
         "test": {
@@ -468,10 +441,7 @@
               "libs/api/channels/shell/tsconfig.lib.json",
               "libs/api/channels/shell/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/api/channels/shell/**/*"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/api/channels/shell/**/*"]
           }
         },
         "test": {
@@ -497,10 +467,7 @@
               "libs/api/channels/domain/tsconfig.lib.json",
               "libs/api/channels/domain/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/api/channels/domain/**/*"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/api/channels/domain/**/*"]
           }
         },
         "test": {

@@ -21,8 +21,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@stock-chat/api/shell-stock-talk-api": [
-        "libs/api/shell-stock-talk-api/src/index.ts"
+      "@stock-chat/api/shell-stock-chat-api": [
+        "libs/api/shell-stock-chat-api/src/index.ts"
       ],
       "@stock-chat/api/auth/shell": [
         "libs/api/auth/shell/src/index.ts"

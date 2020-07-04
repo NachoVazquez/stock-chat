@@ -36,8 +36,8 @@
       "tags": ["scope:api", "type:app"],
       "implicitDependencies": ["api-shared-environments"]
     },
-    "api-shell-stock-talk-api": {
-      "tags": ["scope:stock-talk-api", "type:shell"]
+    "api-shell-stock-chat-api": {
+      "tags": ["scope:api", "scope:stock-chat", "type:shell"]
     },
     "api-auth-shell": {
       "tags": ["scope:auth", "scope:api", "type:shell"]
