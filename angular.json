@@ -123,6 +123,61 @@
           }
         }
       }
+    },
+    "stock-chat-api": {
+      "root": "apps/stock-chat-api",
+      "sourceRoot": "apps/stock-chat-api/src",
+      "projectType": "application",
+      "prefix": "stock-chat-api",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/node:build",
+          "options": {
+            "outputPath": "dist/apps/stock-chat-api",
+            "main": "apps/stock-chat-api/src/main.ts",
+            "tsConfig": "apps/stock-chat-api/tsconfig.app.json",
+            "assets": ["apps/stock-chat-api/src/assets"]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/stock-chat-api/src/environments/environment.ts",
+                  "with": "apps/stock-chat-api/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/node:execute",
+          "options": {
+            "buildTarget": "stock-chat-api:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/stock-chat-api/tsconfig.app.json",
+              "apps/stock-chat-api/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/stock-chat-api/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/stock-chat-api/jest.config.js",
+            "tsConfig": "apps/stock-chat-api/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {
