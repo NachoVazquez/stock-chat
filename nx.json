@@ -34,6 +34,39 @@
     },
     "stock-chat-api": {
       "tags": []
+    },
+    "api-shell-stock-talk-api": {
+      "tags": ["scope:stock-talk-api", "type:shell"]
+    },
+    "api-auth-shell": {
+      "tags": ["scope:auth", "scope:api", "type:shell"]
+    },
+    "api-auth-feature-signup": {
+      "tags": ["scope:auth", "scope:api", "type:feature"]
+    },
+    "api-auth-feature-signin": {
+      "tags": ["scope:auth", "scope:api", "type:feature"]
+    },
+    "api-auth-data-access-signin": {
+      "tags": ["scope:auth", "scope:api", "type:data-access"]
+    },
+    "api-auth-data-access-signup": {
+      "tags": ["scope:auth", "scope:api", "type:data-access"]
+    },
+    "api-auth-domain-signup": {
+      "tags": ["scope:auth", "scope:api", "type:domain"]
+    },
+    "api-auth-domain-signin": {
+      "tags": ["scope:auth", "scope:api", "type:domain"]
+    },
+    "api-shared-domain": {
+      "tags": ["scope:shared", "scope:api", "type:domain"]
+    },
+    "api-shared-auth-domain-jwt": {
+      "tags": ["scope:shared", "scope:api", "type:domain"]
+    },
+    "api-shared-user-domain-user": {
+      "tags": ["scope:shared", "scope:api", "type:domain"]
     }
   }
 }

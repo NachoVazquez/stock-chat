@@ -15,7 +15,37 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@stock-chat/api/shell-stock-talk-api": [
+        "libs/api/shell-stock-talk-api/src/index.ts"
+      ],
+      "@stock-chat/api/auth/shell": ["libs/api/auth/shell/src/index.ts"],
+      "@stock-chat/api/auth/feature-signup": [
+        "libs/api/auth/feature-signup/src/index.ts"
+      ],
+      "@stock-chat/api/auth/feature-signin": [
+        "libs/api/auth/feature-signin/src/index.ts"
+      ],
+      "@stock-chat/api/auth/data-access-signin": [
+        "libs/api/auth/data-access-signin/src/index.ts"
+      ],
+      "@stock-chat/api/auth/data-access-signup": [
+        "libs/api/auth/data-access-signup/src/index.ts"
+      ],
+      "@stock-chat/api/auth/domain-signup": [
+        "libs/api/auth/domain-signup/src/index.ts"
+      ],
+      "@stock-chat/api/auth/domain-signin": [
+        "libs/api/auth/domain-signin/src/index.ts"
+      ],
+      "@stock-chat/api/shared/domain": ["libs/api/shared/domain/src/index.ts"],
+      "@stock-chat/api/shared/auth/domain-jwt": [
+        "libs/api/shared/auth/domain-jwt/src/index.ts"
+      ],
+      "@stock-chat/api/shared/user/domain-user": [
+        "libs/api/shared/user/domain-user/src/index.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
