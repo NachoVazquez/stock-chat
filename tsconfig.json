@@ -31,15 +31,24 @@
         "libs/api/shared/environments/src/index.ts"
       ],
       "@stock-chat/api/auth/domain": ["libs/api/auth/domain/src/index.ts"],
-      "@stock-chat/api/auth/data-access": [
-        "libs/api/auth/data-access/src/index.ts"
-      ],
       "@stock-chat/api/user/data-access": [
         "libs/api/user/data-access/src/index.ts"
       ],
       "@stock-chat/api/user/shell": ["libs/api/user/shell/src/index.ts"],
       "@stock-chat/api/shared/auth/utils": [
         "libs/api/shared/auth/utils/src/index.ts"
+      ],
+      "@stock-chat/api/channels/shell": [
+        "libs/api/channels/shell/src/index.ts"
+      ],
+      "@stock-chat/api/channels/domain": [
+        "libs/api/channels/domain/src/index.ts"
+      ],
+      "@stock-chat/api/channels/data-access": [
+        "libs/api/channels/data-access/src/index.ts"
+      ],
+      "@stock-chat/api/chat-engine/shell": [
+        "libs/api/chat-engine/shell/src/index.ts"
       ]
     }
   },

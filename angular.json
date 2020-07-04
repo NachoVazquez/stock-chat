@@ -373,32 +373,6 @@
         }
       }
     },
-    "api-auth-data-access": {
-      "root": "libs/api/auth/data-access",
-      "sourceRoot": "libs/api/auth/data-access/src",
-      "projectType": "library",
-      "schematics": {},
-      "architect": {
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/api/auth/data-access/tsconfig.lib.json",
-              "libs/api/auth/data-access/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/api/auth/data-access/**/*"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/api/auth/data-access/jest.config.js",
-            "tsConfig": "libs/api/auth/data-access/tsconfig.spec.json",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
     "api-user-data-access": {
       "root": "libs/api/user/data-access",
       "sourceRoot": "libs/api/user/data-access/src",
@@ -475,6 +449,116 @@
           "options": {
             "jestConfig": "libs/api/shared/auth/utils/jest.config.js",
             "tsConfig": "libs/api/shared/auth/utils/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "api-channels-shell": {
+      "root": "libs/api/channels/shell",
+      "sourceRoot": "libs/api/channels/shell/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/api/channels/shell/tsconfig.lib.json",
+              "libs/api/channels/shell/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/api/channels/shell/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/api/channels/shell/jest.config.js",
+            "tsConfig": "libs/api/channels/shell/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "api-channels-domain": {
+      "root": "libs/api/channels/domain",
+      "sourceRoot": "libs/api/channels/domain/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/api/channels/domain/tsconfig.lib.json",
+              "libs/api/channels/domain/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/api/channels/domain/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/api/channels/domain/jest.config.js",
+            "tsConfig": "libs/api/channels/domain/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "api-channels-data-access": {
+      "root": "libs/api/channels/data-access",
+      "sourceRoot": "libs/api/channels/data-access/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/api/channels/data-access/tsconfig.lib.json",
+              "libs/api/channels/data-access/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/api/channels/data-access/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/api/channels/data-access/jest.config.js",
+            "tsConfig": "libs/api/channels/data-access/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "api-chat-engine-shell": {
+      "root": "libs/api/chat-engine/shell",
+      "sourceRoot": "libs/api/chat-engine/shell/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/api/chat-engine/shell/tsconfig.lib.json",
+              "libs/api/chat-engine/shell/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/api/chat-engine/shell/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/api/chat-engine/shell/jest.config.js",
+            "tsConfig": "libs/api/chat-engine/shell/tsconfig.spec.json",
             "passWithNoTests": true
           }
         }

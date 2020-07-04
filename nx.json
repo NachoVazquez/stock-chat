@@ -57,9 +57,6 @@
     "api-auth-domain": {
       "tags": ["scope:api", "scope:auth", "type:domain"]
     },
-    "api-auth-data-access": {
-      "tags": ["scope:api", "scope:auth", "type:data-access"]
-    },
     "api-user-data-access": {
       "tags": ["scope:api", "scope:user", "type:data-access"]
     },
@@ -68,6 +65,18 @@
     },
     "api-shared-auth-utils": {
       "tags": ["scope:api", "scope:auth", "type:utils"]
+    },
+    "api-channels-shell": {
+      "tags": ["scope:api", "scope:channels", "type:shell"]
+    },
+    "api-channels-domain": {
+      "tags": ["scope:api", "scope:channels", "type:domain"]
+    },
+    "api-channels-data-access": {
+      "tags": ["scope:api", "scope:channels", "type:data-access"]
+    },
+    "api-chat-engine-shell": {
+      "tags": ["scope:api", "scope:chat-engine", "type:shell"]
     }
   }
 }
