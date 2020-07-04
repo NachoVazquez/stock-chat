@@ -10,8 +10,13 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
-    "typeRoots": ["node_modules/@types"],
-    "lib": ["es2017", "dom"],
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "es2017",
+      "dom"
+    ],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
@@ -19,8 +24,12 @@
       "@stock-chat/api/shell-stock-talk-api": [
         "libs/api/shell-stock-talk-api/src/index.ts"
       ],
-      "@stock-chat/api/auth/shell": ["libs/api/auth/shell/src/index.ts"],
-      "@stock-chat/api/shared/domain": ["libs/api/shared/domain/src/index.ts"],
+      "@stock-chat/api/auth/shell": [
+        "libs/api/auth/shell/src/index.ts"
+      ],
+      "@stock-chat/api/shared/domain": [
+        "libs/api/shared/domain/src/index.ts"
+      ],
       "@stock-chat/api/shared/auth/domain-jwt": [
         "libs/api/shared/auth/domain-jwt/src/index.ts"
       ],
@@ -30,11 +39,12 @@
       "@stock-chat/api/shared/environments": [
         "libs/api/shared/environments/src/index.ts"
       ],
-      "@stock-chat/api/auth/domain": ["libs/api/auth/domain/src/index.ts"],
-      "@stock-chat/api/user/data-access": [
-        "libs/api/user/data-access/src/index.ts"
+      "@stock-chat/api/auth/domain": [
+        "libs/api/auth/domain/src/index.ts"
       ],
-      "@stock-chat/api/user/shell": ["libs/api/user/shell/src/index.ts"],
+      "@stock-chat/api/user/shell": [
+        "libs/api/user/shell/src/index.ts"
+      ],
       "@stock-chat/api/shared/auth/utils": [
         "libs/api/shared/auth/utils/src/index.ts"
       ],
@@ -49,8 +59,14 @@
       ],
       "@stock-chat/api/chat-engine/shell": [
         "libs/api/chat-engine/shell/src/index.ts"
+      ],
+      "@stock-chat/api/shared/user/data-access": [
+        "libs/api/shared/user/data-access/src/index.ts"
       ]
     }
   },
-  "exclude": ["node_modules", "tmp"]
+  "exclude": [
+    "node_modules",
+    "tmp"
+  ]
 }

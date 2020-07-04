@@ -1,9 +1,7 @@
 import { Module } from '@nestjs/common';
 
-import { ApiChatEngineShellController } from './api-chat-engine-shell.controller';
-
 @Module({
-  controllers: [ApiChatEngineShellController],
+  controllers: [],
   providers: [],
   exports: [],
 })

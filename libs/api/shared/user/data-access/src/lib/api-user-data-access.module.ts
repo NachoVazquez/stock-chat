@@ -13,4 +13,4 @@ import { UserSchema } from './schemas/user.schema';
   providers: [{ provide: IUserRepository, useClass: UserRepository }],
   exports: [IUserRepository],
 })
-export class ApiUserDataAccessModule {}
+export class ApiSharedUserDataAccessModule {}

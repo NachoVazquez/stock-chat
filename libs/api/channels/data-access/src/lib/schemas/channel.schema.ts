@@ -1,26 +1,28 @@
-// import { Schema } from 'mongoose';
+import { Schema } from 'mongoose';
 
-// import {UserSchema} from './index'
+import { Channel } from '@stock-chat/api/channels/domain';
+import { UserSchema } from '@stock-chat/api/shared/user/data-access';
 
-// const channel = new Schema({
-//   name: { type: String, required: true },
-//   description: { type: String },
-//   is_user: { type: Boolean, default: false },
-//   is_private: { type: Boolean, default: false },
-//   users: [UserSchema],
-//   messages: [MessageSchema],
-//   created_at: { type: Date, default: Date.now },
-//   updated_at: { type: Date, default: Date.now },
-// });
+import { MessageSchema } from './message.schema';
 
-// /**
-//  * On every save, add the date
-//  */
-// channel.pre('save', function (next) {
-//   const currentDate = new Date();
+const channel = new Schema({
+  name: { type: String, required: true },
+  description: { type: String },
+  is_user: { type: Boolean, default: false },
+  users: [UserSchema],
+  messages: [MessageSchema],
+  created_at: { type: Date, default: Date.now },
+  updated_at: { type: Date, default: Date.now },
+});
 
-//   this.updated_at = currentDate;
-//   next();
-// });
+/**
+ * On every save, add the date
+ */
+channel.pre('save', function (next) {
+  const currentDate = new Date();
 
-// export const RoomSchema = channel;
+  (<Channel>this).updated_at = currentDate;
+  next();
+});
+
+export const ChannelSchema = channel;

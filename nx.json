@@ -26,14 +26,14 @@
   },
   "projects": {
     "stock-chat": {
-      "tags": []
+      "tags": ["scope:client", "type:app"]
     },
     "stock-chat-e2e": {
-      "tags": [],
+      "tags": ["scope:client", "type:e2e"],
       "implicitDependencies": ["stock-chat"]
     },
     "stock-chat-api": {
-      "tags": [],
+      "tags": ["scope:api", "type:app"],
       "implicitDependencies": ["api-shared-environments"]
     },
     "api-shell-stock-talk-api": {
@@ -57,9 +57,6 @@
     "api-auth-domain": {
       "tags": ["scope:api", "scope:auth", "type:domain"]
     },
-    "api-user-data-access": {
-      "tags": ["scope:api", "scope:user", "type:data-access"]
-    },
     "api-user-shell": {
       "tags": ["scope:api", "scope:user", "type:shell"]
     },
@@ -77,6 +74,9 @@
     },
     "api-chat-engine-shell": {
       "tags": ["scope:api", "scope:chat-engine", "type:shell"]
+    },
+    "api-shared-user-data-access": {
+      "tags": ["scope:api", "scope:user", "scope:shared", "type:data-access"]
     }
   }
 }

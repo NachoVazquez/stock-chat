@@ -1,10 +1,12 @@
 import { Module } from '@nestjs/common';
 
-import { ApiChannelsShellController } from './api-channels-shell.controller';
+import { ApiChannelsDataAccessModule } from '@stock-chat/api/channels/data-access';
+import { ApiChannelsDomainModule } from '@stock-chat/api/channels/domain';
+
+import { ChannelsController } from './channels.controller';
 
 @Module({
-  controllers: [ApiChannelsShellController],
-  providers: [],
-  exports: [],
+  imports: [ApiChannelsDataAccessModule, ApiChannelsDomainModule],
+  controllers: [ChannelsController],
 })
 export class ApiChannelsShellModule {}
