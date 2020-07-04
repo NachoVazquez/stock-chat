@@ -1,11 +1,11 @@
 import { Module } from '@nestjs/common';
 
-import { DomainUserModule } from '@stock-chat/api/shared/user/domain-user';
+import { ApiSharedDomainUserModule } from '@stock-chat/api/shared/user/domain-user';
 
 import { JwtService } from './services';
 
 @Module({
-  imports: [DomainUserModule],
+  imports: [ApiSharedDomainUserModule],
   providers: [JwtService],
   exports: [JwtService],
 })

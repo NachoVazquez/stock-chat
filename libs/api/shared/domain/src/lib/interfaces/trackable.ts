@@ -1,4 +1,4 @@
 export interface Trackable {
-  readonly created_at: Date;
-  readonly updated_at: Date;
+  created_at: Date;
+  updated_at: Date;
 }

@@ -7,4 +7,4 @@ import { UsersService } from './services';
   providers: [UsersService],
   exports: [UsersService],
 })
-export class DomainUserModule {}
+export class ApiSharedDomainUserModule {}

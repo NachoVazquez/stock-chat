@@ -130,7 +130,6 @@
       "projectType": "application",
       "prefix": "stock-chat-api",
       "schematics": {},
-      "implicitDependencies": ["api-shared-assets", "api-shared-environments"],
       "architect": {
         "build": {
           "builder": "@nrwl/node:build",
@@ -138,7 +137,7 @@
             "outputPath": "dist/apps/stock-chat-api",
             "main": "apps/stock-chat-api/src/main.ts",
             "tsConfig": "apps/stock-chat-api/tsconfig.app.json",
-            "assets": ["libs/api/shared/assets/src"]
+            "assets": ["apps/stock-chat-api/src/assets"]
           },
           "configurations": {
             "production": {
@@ -235,180 +234,6 @@
         }
       }
     },
-    "api-auth-feature-signup": {
-      "root": "libs/api/auth/feature-signup",
-      "sourceRoot": "libs/api/auth/feature-signup/src",
-      "projectType": "library",
-      "schematics": {},
-      "architect": {
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/api/auth/feature-signup/tsconfig.lib.json",
-              "libs/api/auth/feature-signup/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/api/auth/feature-signup/**/*"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/api/auth/feature-signup/jest.config.js",
-            "tsConfig": "libs/api/auth/feature-signup/tsconfig.spec.json",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "api-auth-feature-signin": {
-      "root": "libs/api/auth/feature-signin",
-      "sourceRoot": "libs/api/auth/feature-signin/src",
-      "projectType": "library",
-      "schematics": {},
-      "architect": {
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/api/auth/feature-signin/tsconfig.lib.json",
-              "libs/api/auth/feature-signin/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/api/auth/feature-signin/**/*"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/api/auth/feature-signin/jest.config.js",
-            "tsConfig": "libs/api/auth/feature-signin/tsconfig.spec.json",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "api-auth-data-access-signin": {
-      "root": "libs/api/auth/data-access-signin",
-      "sourceRoot": "libs/api/auth/data-access-signin/src",
-      "projectType": "library",
-      "schematics": {},
-      "architect": {
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/api/auth/data-access-signin/tsconfig.lib.json",
-              "libs/api/auth/data-access-signin/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/api/auth/data-access-signin/**/*"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/api/auth/data-access-signin/jest.config.js",
-            "tsConfig": "libs/api/auth/data-access-signin/tsconfig.spec.json",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "api-auth-data-access-signup": {
-      "root": "libs/api/auth/data-access-signup",
-      "sourceRoot": "libs/api/auth/data-access-signup/src",
-      "projectType": "library",
-      "schematics": {},
-      "architect": {
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/api/auth/data-access-signup/tsconfig.lib.json",
-              "libs/api/auth/data-access-signup/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/api/auth/data-access-signup/**/*"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/api/auth/data-access-signup/jest.config.js",
-            "tsConfig": "libs/api/auth/data-access-signup/tsconfig.spec.json",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "api-auth-domain-signup": {
-      "root": "libs/api/auth/domain-signup",
-      "sourceRoot": "libs/api/auth/domain-signup/src",
-      "projectType": "library",
-      "schematics": {},
-      "architect": {
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/api/auth/domain-signup/tsconfig.lib.json",
-              "libs/api/auth/domain-signup/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/api/auth/domain-signup/**/*"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/api/auth/domain-signup/jest.config.js",
-            "tsConfig": "libs/api/auth/domain-signup/tsconfig.spec.json",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "api-auth-domain-signin": {
-      "root": "libs/api/auth/domain-signin",
-      "sourceRoot": "libs/api/auth/domain-signin/src",
-      "projectType": "library",
-      "schematics": {},
-      "architect": {
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/api/auth/domain-signin/tsconfig.lib.json",
-              "libs/api/auth/domain-signin/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/api/auth/domain-signin/**/*"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/api/auth/domain-signin/jest.config.js",
-            "tsConfig": "libs/api/auth/domain-signin/tsconfig.spec.json",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
     "api-shared-domain": {
       "root": "libs/api/shared/domain",
       "sourceRoot": "libs/api/shared/domain/src",
@@ -493,13 +318,6 @@
         }
       }
     },
-    "api-shared-assets": {
-      "root": "libs/api/shared/assets",
-      "sourceRoot": "libs/api/shared/assets/src",
-      "projectType": "library",
-      "schematics": {},
-      "architect": {}
-    },
     "api-shared-environments": {
       "root": "libs/api/shared/environments",
       "sourceRoot": "libs/api/shared/environments/src",
@@ -524,6 +342,110 @@
           "options": {
             "jestConfig": "libs/api/shared/environments/jest.config.js",
             "tsConfig": "libs/api/shared/environments/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "api-auth-domain": {
+      "root": "libs/api/auth/domain",
+      "sourceRoot": "libs/api/auth/domain/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/api/auth/domain/tsconfig.lib.json",
+              "libs/api/auth/domain/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/api/auth/domain/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/api/auth/domain/jest.config.js",
+            "tsConfig": "libs/api/auth/domain/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "api-auth-data-access": {
+      "root": "libs/api/auth/data-access",
+      "sourceRoot": "libs/api/auth/data-access/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/api/auth/data-access/tsconfig.lib.json",
+              "libs/api/auth/data-access/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/api/auth/data-access/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/api/auth/data-access/jest.config.js",
+            "tsConfig": "libs/api/auth/data-access/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "api-user-data-access": {
+      "root": "libs/api/user/data-access",
+      "sourceRoot": "libs/api/user/data-access/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/api/user/data-access/tsconfig.lib.json",
+              "libs/api/user/data-access/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/api/user/data-access/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/api/user/data-access/jest.config.js",
+            "tsConfig": "libs/api/user/data-access/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "api-user-shell": {
+      "root": "libs/api/user/shell",
+      "sourceRoot": "libs/api/user/shell/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/api/user/shell/tsconfig.lib.json",
+              "libs/api/user/shell/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/api/user/shell/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/api/user/shell/jest.config.js",
+            "tsConfig": "libs/api/user/shell/tsconfig.spec.json",
             "passWithNoTests": true
           }
         }

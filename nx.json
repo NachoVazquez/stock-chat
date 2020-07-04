@@ -33,31 +33,14 @@
       "implicitDependencies": ["stock-chat"]
     },
     "stock-chat-api": {
-      "tags": []
+      "tags": [],
+      "implicitDependencies": ["api-shared-environments"]
     },
     "api-shell-stock-talk-api": {
       "tags": ["scope:stock-talk-api", "type:shell"]
     },
     "api-auth-shell": {
       "tags": ["scope:auth", "scope:api", "type:shell"]
-    },
-    "api-auth-feature-signup": {
-      "tags": ["scope:auth", "scope:api", "type:feature"]
-    },
-    "api-auth-feature-signin": {
-      "tags": ["scope:auth", "scope:api", "type:feature"]
-    },
-    "api-auth-data-access-signin": {
-      "tags": ["scope:auth", "scope:api", "type:data-access"]
-    },
-    "api-auth-data-access-signup": {
-      "tags": ["scope:auth", "scope:api", "type:data-access"]
-    },
-    "api-auth-domain-signup": {
-      "tags": ["scope:auth", "scope:api", "type:domain"]
-    },
-    "api-auth-domain-signin": {
-      "tags": ["scope:auth", "scope:api", "type:domain"]
     },
     "api-shared-domain": {
       "tags": ["scope:shared", "scope:api", "type:domain"]
@@ -68,11 +51,20 @@
     "api-shared-user-domain-user": {
       "tags": ["scope:shared", "scope:api", "scope:user", "type:domain"]
     },
-    "api-shared-assets": {
-      "tags": ["scope:api", "scope:shared", "type:assets"]
-    },
     "api-shared-environments": {
       "tags": ["scope:api", "scope:shared", "type:environments"]
+    },
+    "api-auth-domain": {
+      "tags": ["scope:api", "scope:auth", "type:domain"]
+    },
+    "api-auth-data-access": {
+      "tags": ["scope:api", "scope:auth", "type:data-access"]
+    },
+    "api-user-data-access": {
+      "tags": ["scope:api", "scope:user", "type:data-access"]
+    },
+    "api-user-shell": {
+      "tags": ["scope:api", "scope:user", "type:shell"]
     }
   }
 }
