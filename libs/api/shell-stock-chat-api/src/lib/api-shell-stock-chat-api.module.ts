@@ -6,6 +6,7 @@ import {
   ApiChannelsShellModule,
   ChannelsController,
 } from '@stock-chat/api/channels/shell';
+import { ApiChatEngineShellModule } from '@stock-chat/api/chat-engine/shell';
 import { GetUserMiddleware } from '@stock-chat/api/shared/auth/utils';
 import { environment } from '@stock-chat/api/shared/environments';
 import {
@@ -19,6 +20,7 @@ import {
     ApiAuthShellModule,
     ApiUserShellModule,
     ApiChannelsShellModule,
+    ApiChatEngineShellModule,
   ],
 })
 export class ApiShellStockChatApiModule {
