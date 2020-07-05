@@ -866,6 +866,213 @@
           "style": "scss"
         }
       }
+    },
+    "client-chat-shell": {
+      "projectType": "library",
+      "root": "libs/client/chat/shell",
+      "sourceRoot": "libs/client/chat/shell/src",
+      "prefix": "stock-chat",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/client/chat/shell/tsconfig.lib.json",
+              "libs/client/chat/shell/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/client/chat/shell/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/client/chat/shell/jest.config.js",
+            "tsConfig": "libs/client/chat/shell/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/client/chat/shell/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "client-chat-feature-messages": {
+      "projectType": "library",
+      "root": "libs/client/chat/feature-messages",
+      "sourceRoot": "libs/client/chat/feature-messages/src",
+      "prefix": "stock-chat",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/client/chat/feature-messages/tsconfig.lib.json",
+              "libs/client/chat/feature-messages/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/client/chat/feature-messages/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/client/chat/feature-messages/jest.config.js",
+            "tsConfig": "libs/client/chat/feature-messages/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/client/chat/feature-messages/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "client-chat-feature-chat-input": {
+      "projectType": "library",
+      "root": "libs/client/chat/feature-chat-input",
+      "sourceRoot": "libs/client/chat/feature-chat-input/src",
+      "prefix": "stock-chat",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/client/chat/feature-chat-input/tsconfig.lib.json",
+              "libs/client/chat/feature-chat-input/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/client/chat/feature-chat-input/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/client/chat/feature-chat-input/jest.config.js",
+            "tsConfig": "libs/client/chat/feature-chat-input/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/client/chat/feature-chat-input/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "client-chat-feature-channels": {
+      "projectType": "library",
+      "root": "libs/client/chat/feature-channels",
+      "sourceRoot": "libs/client/chat/feature-channels/src",
+      "prefix": "stock-chat",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/client/chat/feature-channels/tsconfig.lib.json",
+              "libs/client/chat/feature-channels/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/client/chat/feature-channels/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/client/chat/feature-channels/jest.config.js",
+            "tsConfig": "libs/client/chat/feature-channels/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/client/chat/feature-channels/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "client-chat-data-access": {
+      "projectType": "library",
+      "root": "libs/client/chat/data-access",
+      "sourceRoot": "libs/client/chat/data-access/src",
+      "prefix": "stock-chat",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/client/chat/data-access/tsconfig.lib.json",
+              "libs/client/chat/data-access/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/client/chat/data-access/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/client/chat/data-access/jest.config.js",
+            "tsConfig": "libs/client/chat/data-access/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/client/chat/data-access/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "client-shared-auth-data-access": {
+      "projectType": "library",
+      "root": "libs/client/shared/auth/data-access",
+      "sourceRoot": "libs/client/shared/auth/data-access/src",
+      "prefix": "stock-chat",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/client/shared/auth/data-access/tsconfig.lib.json",
+              "libs/client/shared/auth/data-access/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/client/shared/auth/data-access/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/client/shared/auth/data-access/jest.config.js",
+            "tsConfig": "libs/client/shared/auth/data-access/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/client/shared/auth/data-access/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
     }
   },
   "cli": {

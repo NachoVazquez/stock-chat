@@ -104,6 +104,24 @@
     },
     "client-auth-feature-signup": {
       "tags": ["scope:client", "scope:auth", "type:feature"]
+    },
+    "client-chat-shell": {
+      "tags": ["scope:client", "scope:chat", "type:shell"]
+    },
+    "client-chat-feature-messages": {
+      "tags": ["scope:client", "scope:chat", "type:feature"]
+    },
+    "client-chat-feature-chat-input": {
+      "tags": ["scope:client", "scope:chat", "type:feature"]
+    },
+    "client-chat-feature-channels": {
+      "tags": ["scope:client", "scope:chat", "type:feature"]
+    },
+    "client-chat-data-access": {
+      "tags": ["scope:client", "scope:chat", "type:data-access"]
+    },
+    "client-shared-auth-data-access": {
+      "tags": ["scope:client", "scope:shared", "scope:auth", "type:data-access"]
     }
   }
 }

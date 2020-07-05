@@ -72,6 +72,22 @@
       "@stock-chat/client/auth/shell": ["libs/client/auth/shell/src/index.ts"],
       "@stock-chat/client/auth/feature-signup": [
         "libs/client/auth/feature-signup/src/index.ts"
+      ],
+      "@stock-chat/client/chat/shell": ["libs/client/chat/shell/src/index.ts"],
+      "@stock-chat/client/chat/feature-messages": [
+        "libs/client/chat/feature-messages/src/index.ts"
+      ],
+      "@stock-chat/client/chat/feature-chat-input": [
+        "libs/client/chat/feature-chat-input/src/index.ts"
+      ],
+      "@stock-chat/client/chat/feature-channels": [
+        "libs/client/chat/feature-channels/src/index.ts"
+      ],
+      "@stock-chat/client/chat/data-access": [
+        "libs/client/chat/data-access/src/index.ts"
+      ],
+      "@stock-chat/client/shared/auth/data-access": [
+        "libs/client/shared/auth/data-access/src/index.ts"
       ]
     }
   },
