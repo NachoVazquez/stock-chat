@@ -1,0 +1,48 @@
+.signup--section {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+
+  mat-card {
+    padding: 3rem;
+    height: fit-content;
+    min-height: 45%;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    mat-card-title {
+      margin-bottom: 3rem;
+    }
+
+    mat-card-content {
+      width: 100%;
+    }
+  }
+
+  .signup--form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    mat-form-field {
+      width: 80%;
+      margin-bottom: 1rem;
+    }
+
+    .signup--button {
+      margin-top: 2rem;
+      font-size: 1rem;
+    }
+  }
+
+  .redirect-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+    font-size: 0.75rem;
+  }
+}

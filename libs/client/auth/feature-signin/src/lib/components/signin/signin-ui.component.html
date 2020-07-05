@@ -1,0 +1,64 @@
+<section class="signin--section">
+  <mat-card class="mat-elevation-z24">
+    <mat-card-title>Sign In</mat-card-title>
+    <mat-card-content>
+      <form
+        class="signin--form"
+        [formGroup]="signinForm"
+        (ngSubmit)="doSignin()"
+      >
+        <mat-form-field>
+          <input
+            type="email"
+            matInput
+            placeholder="Email"
+            formControlName="email"
+          />
+          <mat-error
+            *ngIf="
+              emailControl.hasError('email') &&
+              !emailControl.hasError('required')
+            "
+          >
+            Please enter a valid email address
+          </mat-error>
+          <mat-error *ngIf="emailControl.hasError('required')">
+            Email is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input
+            type="password"
+            matInput
+            placeholder="Password"
+            formControlName="password"
+          />
+          <mat-error *ngIf="passwordControl.hasError('required')">
+            Password is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+
+        <button
+          [disabled]="!signinForm.valid"
+          class="signin--button"
+          type="submit"
+          mat-button
+          color="primary"
+        >
+          Sign In
+        </button>
+      </form>
+      <div class="redirect-link">
+        Not registered?
+        <a
+          [routerLink]="['/auth/signup']"
+          type="submit"
+          mat-button
+          color="accent"
+          >Sign Up</a
+        >
+      </div>
+    </mat-card-content>
+  </mat-card>
+</section>

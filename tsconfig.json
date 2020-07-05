@@ -64,6 +64,14 @@
       ],
       "@stock-chat/client/shared/layout/ui-topbar": [
         "libs/client/shared/layout/ui-topbar/src/index.ts"
+      ],
+      "@stock-chat/shared/dtos": ["libs/shared/dtos/src/index.ts"],
+      "@stock-chat/client/shared/utils-router": [
+        "libs/client/shared/utils-router/src/index.ts"
+      ],
+      "@stock-chat/client/auth/shell": ["libs/client/auth/shell/src/index.ts"],
+      "@stock-chat/client/auth/feature-signup": [
+        "libs/client/auth/feature-signup/src/index.ts"
       ]
     }
   },

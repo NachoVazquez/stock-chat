@@ -92,6 +92,18 @@
     },
     "client-shared-layout-ui-topbar": {
       "tags": ["scope:client", "scope:shared", "scope:layout", "type:ui"]
+    },
+    "shared-dtos": {
+      "tags": ["scope:shared"]
+    },
+    "client-shared-utils-router": {
+      "tags": ["scope:client", "scope:shared", "type:utils"]
+    },
+    "client-auth-shell": {
+      "tags": ["scope:client", "scope:auth", "type:shell"]
+    },
+    "client-auth-feature-signup": {
+      "tags": ["scope:client", "scope:auth", "type:feature"]
     }
   }
 }

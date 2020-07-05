@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'stock-chat-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  template: `<stock-chat-layout></stock-chat-layout>`,
 })
-export class AppComponent {
-  title = 'stock-chat';
+export class AppComponent implements OnInit {
+  constructor() {}
+
+  ngOnInit() {}
 }

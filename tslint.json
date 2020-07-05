@@ -108,7 +108,15 @@
           },
           {
             "sourceTag": "type:app",
-            "onlyDependOnLibsWithTags": ["type:shell"]
+            "onlyDependOnLibsWithTags": ["type:shell", "type:feature-shell"]
+          },
+          {
+            "sourceTag": "type:feature-shell",
+            "onlyDependOnLibsWithTags": [
+              "type:shell",
+              "type:feature",
+              "scope:shared"
+            ]
           },
           {
             "sourceTag": "type:domain",

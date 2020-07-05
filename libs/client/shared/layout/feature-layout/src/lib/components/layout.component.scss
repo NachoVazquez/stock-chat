@@ -1,0 +1,18 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+
+  mat-toolbar {
+    height: 10vh;
+  }
+
+  stock-chat-content {
+    height: 90vh;
+    background-color: #303030;
+
+    & > * {
+      background-color: inherit;
+    }
+  }
+}

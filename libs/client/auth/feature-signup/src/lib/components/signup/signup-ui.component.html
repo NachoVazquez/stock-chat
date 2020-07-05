@@ -1,0 +1,98 @@
+<section class="signup--section">
+  <mat-card class="mat-elevation-z24">
+    <mat-card-title>Sign Up</mat-card-title>
+    <mat-card-content>
+      <form
+        class="signup--form"
+        [formGroup]="signupForm"
+        (ngSubmit)="doSignup()"
+      >
+        <mat-form-field>
+          <input
+            type="text"
+            matInput
+            placeholder="Name"
+            formControlName="name"
+          />
+          <mat-error *ngIf="nameControl.hasError('required')">
+            Name is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input
+            type="email"
+            matInput
+            placeholder="Email"
+            formControlName="email"
+          />
+          <mat-error
+            *ngIf="
+              emailControl.hasError('email') &&
+              !emailControl.hasError('required')
+            "
+          >
+            Please enter a valid email address
+          </mat-error>
+          <mat-error *ngIf="emailControl.hasError('required')">
+            Email is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input
+            type="password"
+            matInput
+            placeholder="Password"
+            formControlName="password"
+          />
+          <mat-error *ngIf="passwordControl.hasError('required')">
+            Password is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input
+            type="confirmPassword"
+            matInput
+            placeholder="Confirm Password"
+            formControlName="confirmPassword"
+          />
+          <mat-error *ngIf="confirmPasswordControl.hasError('required')">
+            Confirm Password is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-error
+          *ngIf="
+            signupForm.hasError('mismatch') &&
+            !confirmPasswordControl.hasError('required') &&
+            !passwordControl.hasError('required')
+          "
+        >
+          Password and Confirm Password should <strong>match</strong>.
+        </mat-error>
+
+        <button
+          [disabled]="!signupForm.valid"
+          class="signup--button"
+          type="submit"
+          mat-button
+          color="primary"
+        >
+          Sign Up
+        </button>
+      </form>
+      <div class="redirect-link">
+        Already have an account?
+        <a
+          [routerLink]="['/auth/signin']"
+          type="submit"
+          mat-button
+          color="accent"
+          >Sign In</a
+        >
+      </div>
+    </mat-card-content>
+  </mat-card>
+</section>
