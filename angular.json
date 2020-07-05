@@ -25,7 +25,10 @@
               "apps/stock-chat/src/favicon.ico",
               "apps/stock-chat/src/assets"
             ],
-            "styles": ["apps/stock-chat/src/styles.scss"],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css",
+              "apps/stock-chat/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -564,6 +567,181 @@
             "tsConfig": "libs/api/shared/user/data-access/tsconfig.spec.json",
             "passWithNoTests": true
           }
+        }
+      }
+    },
+    "client-stock-chat-shell": {
+      "projectType": "library",
+      "root": "libs/client/stock-chat/shell",
+      "sourceRoot": "libs/client/stock-chat/shell/src",
+      "prefix": "stock-chat",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/client/stock-chat/shell/tsconfig.lib.json",
+              "libs/client/stock-chat/shell/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/client/stock-chat/shell/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/client/stock-chat/shell/jest.config.js",
+            "tsConfig": "libs/client/stock-chat/shell/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/client/stock-chat/shell/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "client-auth-feature-signin": {
+      "projectType": "library",
+      "root": "libs/client/auth/feature-signin",
+      "sourceRoot": "libs/client/auth/feature-signin/src",
+      "prefix": "stock-chat",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/client/auth/feature-signin/tsconfig.lib.json",
+              "libs/client/auth/feature-signin/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/client/auth/feature-signin/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/client/auth/feature-signin/jest.config.js",
+            "tsConfig": "libs/client/auth/feature-signin/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/client/auth/feature-signin/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "client-shared-layout-feature-layout": {
+      "projectType": "library",
+      "root": "libs/client/shared/layout/feature-layout",
+      "sourceRoot": "libs/client/shared/layout/feature-layout/src",
+      "prefix": "stock-chat",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/client/shared/layout/feature-layout/tsconfig.lib.json",
+              "libs/client/shared/layout/feature-layout/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/client/shared/layout/feature-layout/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/client/shared/layout/feature-layout/jest.config.js",
+            "tsConfig": "libs/client/shared/layout/feature-layout/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/client/shared/layout/feature-layout/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "client-shared-layout-ui-content": {
+      "projectType": "library",
+      "root": "libs/client/shared/layout/ui-content",
+      "sourceRoot": "libs/client/shared/layout/ui-content/src",
+      "prefix": "stock-chat",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/client/shared/layout/ui-content/tsconfig.lib.json",
+              "libs/client/shared/layout/ui-content/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/client/shared/layout/ui-content/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/client/shared/layout/ui-content/jest.config.js",
+            "tsConfig": "libs/client/shared/layout/ui-content/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/client/shared/layout/ui-content/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "client-shared-layout-ui-topbar": {
+      "projectType": "library",
+      "root": "libs/client/shared/layout/ui-topbar",
+      "sourceRoot": "libs/client/shared/layout/ui-topbar/src",
+      "prefix": "stock-chat",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/client/shared/layout/ui-topbar/tsconfig.lib.json",
+              "libs/client/shared/layout/ui-topbar/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/client/shared/layout/ui-topbar/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/client/shared/layout/ui-topbar/jest.config.js",
+            "tsConfig": "libs/client/shared/layout/ui-topbar/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/client/shared/layout/ui-topbar/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
         }
       }
     }

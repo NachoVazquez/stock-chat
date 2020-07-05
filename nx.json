@@ -77,6 +77,21 @@
     },
     "api-shared-user-data-access": {
       "tags": ["scope:api", "scope:user", "scope:shared", "type:data-access"]
+    },
+    "client-stock-chat-shell": {
+      "tags": ["scope:client", "scope:stock-chat", "type:feature-shell"]
+    },
+    "client-auth-feature-signin": {
+      "tags": ["scope:client", "scope:auth", "type:feature"]
+    },
+    "client-shared-layout-feature-layout": {
+      "tags": ["scope:client", "scope:shared", "scope:layout", "type:feature"]
+    },
+    "client-shared-layout-ui-content": {
+      "tags": ["scope:client", "scope:shared", "scope:layout", "type:ui"]
+    },
+    "client-shared-layout-ui-topbar": {
+      "tags": ["scope:client", "scope:shared", "scope:layout", "type:ui"]
     }
   }
 }

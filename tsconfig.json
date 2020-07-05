@@ -10,13 +10,8 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
-    "typeRoots": [
-      "node_modules/@types"
-    ],
-    "lib": [
-      "es2017",
-      "dom"
-    ],
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["es2017", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
@@ -24,12 +19,8 @@
       "@stock-chat/api/shell-stock-chat-api": [
         "libs/api/shell-stock-chat-api/src/index.ts"
       ],
-      "@stock-chat/api/auth/shell": [
-        "libs/api/auth/shell/src/index.ts"
-      ],
-      "@stock-chat/api/shared/domain": [
-        "libs/api/shared/domain/src/index.ts"
-      ],
+      "@stock-chat/api/auth/shell": ["libs/api/auth/shell/src/index.ts"],
+      "@stock-chat/api/shared/domain": ["libs/api/shared/domain/src/index.ts"],
       "@stock-chat/api/shared/auth/domain-jwt": [
         "libs/api/shared/auth/domain-jwt/src/index.ts"
       ],
@@ -39,12 +30,8 @@
       "@stock-chat/api/shared/environments": [
         "libs/api/shared/environments/src/index.ts"
       ],
-      "@stock-chat/api/auth/domain": [
-        "libs/api/auth/domain/src/index.ts"
-      ],
-      "@stock-chat/api/user/shell": [
-        "libs/api/user/shell/src/index.ts"
-      ],
+      "@stock-chat/api/auth/domain": ["libs/api/auth/domain/src/index.ts"],
+      "@stock-chat/api/user/shell": ["libs/api/user/shell/src/index.ts"],
       "@stock-chat/api/shared/auth/utils": [
         "libs/api/shared/auth/utils/src/index.ts"
       ],
@@ -62,11 +49,23 @@
       ],
       "@stock-chat/api/shared/user/data-access": [
         "libs/api/shared/user/data-access/src/index.ts"
+      ],
+      "@stock-chat/client/stock-chat/shell": [
+        "libs/client/stock-chat/shell/src/index.ts"
+      ],
+      "@stock-chat/client/auth/feature-signin": [
+        "libs/client/auth/feature-signin/src/index.ts"
+      ],
+      "@stock-chat/client/shared/layout/feature-layout": [
+        "libs/client/shared/layout/feature-layout/src/index.ts"
+      ],
+      "@stock-chat/client/shared/layout/ui-content": [
+        "libs/client/shared/layout/ui-content/src/index.ts"
+      ],
+      "@stock-chat/client/shared/layout/ui-topbar": [
+        "libs/client/shared/layout/ui-topbar/src/index.ts"
       ]
     }
   },
-  "exclude": [
-    "node_modules",
-    "tmp"
-  ]
+  "exclude": ["node_modules", "tmp"]
 }
