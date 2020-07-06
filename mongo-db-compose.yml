@@ -1,0 +1,13 @@
+# This docker-compose file can be the startup for all projects.
+# For now, it is just used to ease up the use of MongoDB.
+version: '3'
+services:
+  mongo:
+    image: mongo
+    ports:
+      - '27017:27017'
+    volumes:
+      - data-volume:/data/db
+    restart: unless-stopped
+volumes:
+  data-volume:

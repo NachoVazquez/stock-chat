@@ -1,15 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { of } from 'rxjs';
-import {
-  catchError,
-  exhaustMap,
-  map,
-  switchMap,
-  tap,
-  mergeMap,
-} from 'rxjs/operators';
+import { catchError, map, mergeMap, switchMap, tap } from 'rxjs/operators';
 
 import { ChannelService, ChatService } from '../../services';
 import { ChannelAPIActions, ChannelListActions } from '../actions';

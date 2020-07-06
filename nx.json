@@ -94,7 +94,7 @@
       "tags": ["scope:client", "scope:shared", "scope:layout", "type:ui"]
     },
     "shared-dtos": {
-      "tags": ["scope:cross", "scope:shared"]
+      "tags": ["scope:cross", "scope:shared", "type:dtos"]
     },
     "client-shared-utils-router": {
       "tags": ["scope:client", "scope:shared", "type:utils"]

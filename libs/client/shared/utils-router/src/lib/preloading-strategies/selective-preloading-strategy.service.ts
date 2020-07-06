@@ -18,6 +18,7 @@ export class SelectivePreloadingStrategyService implements PreloadingStrategy {
 
       return load();
     } else {
+      // tslint:disable-next-line: no-null-keyword
       return of(null);
     }
   }

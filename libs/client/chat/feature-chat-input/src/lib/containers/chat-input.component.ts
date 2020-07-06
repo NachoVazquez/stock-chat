@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { take, withLatestFrom } from 'rxjs/operators';
@@ -8,11 +8,11 @@ import {
   ChatService,
   reducers as fromChat,
 } from '@stock-chat/client/chat/data-access';
-import { ChannelDTO, UserDTO } from '@stock-chat/shared/dtos';
 import {
   AuthSelectors,
   reducers as fromAuth,
 } from '@stock-chat/client/shared/auth/data-access';
+import { ChannelDTO, UserDTO } from '@stock-chat/shared/dtos';
 
 @Component({
   selector: 'stock-chat-chat-input',
