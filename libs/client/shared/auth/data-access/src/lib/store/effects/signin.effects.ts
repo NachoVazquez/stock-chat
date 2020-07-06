@@ -60,6 +60,7 @@ export class SignInEffects {
         ),
         tap(() => {
           this.authService.logout();
+          this.router.navigate(['/auth/signin']).catch();
         })
       ),
 

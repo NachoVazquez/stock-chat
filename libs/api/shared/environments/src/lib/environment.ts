@@ -1,7 +1,7 @@
 export const environment = {
   production: false,
-  accessTokenExpires: '1h',
-  refreshTokenExpires: '8h',
+  accessTokenExpires: '24h',
+  refreshTokenExpires: '15d',
   jwtSecret: 'MyS3cr3tK3Y',
 
   jwtSession: {
