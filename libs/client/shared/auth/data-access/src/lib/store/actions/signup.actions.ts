@@ -6,3 +6,5 @@ export const signup = createAction(
   '[SingUp] Sign Up User',
   props<{ userToCreate: CreateUserDTO }>()
 );
+
+export const logout = createAction('[SingUp] Logout');

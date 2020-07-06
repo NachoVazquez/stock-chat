@@ -14,11 +14,13 @@ import { CreateUserDTO } from '@stock-chat/shared/dtos';
   ></stock-chat-signup-ui>`,
 })
 export class SignUpComponent implements OnInit {
-  constructor(private readonly store$: Store<fromAuth.State>) {}
+  constructor(private readonly store$: Store<fromAuth.State>) {
+    this.store$.dispatch(SignUpActions.logout());
+  }
 
   ngOnInit() {}
 
-  signup(signinData: CreateUserDTO): void {
-    this.store$.dispatch(SignUpActions.signup({ userToCreate: signinData }));
+  signup(userToCreate: CreateUserDTO): void {
+    this.store$.dispatch(SignUpActions.signup({ userToCreate }));
   }
 }

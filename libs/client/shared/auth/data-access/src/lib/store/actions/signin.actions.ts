@@ -6,3 +6,5 @@ export const signin = createAction(
   '[SingIn] Try to Sign In User',
   props<{ credentials: SignInDTO }>()
 );
+
+export const logout = createAction('[SingIn] Logout');

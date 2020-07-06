@@ -1,5 +1,8 @@
 import { Injectable } from '@nestjs/common';
 
+import { CreateMessageDTO, MessageDTO } from '@stock-chat/shared/dtos';
+import { ChannelDTO, CreateChannelDTO } from '@stock-chat/shared/dtos';
+
 import { IChannelsRepository } from '../abstracts';
 import { Channel, Message } from '../interfaces';
 
@@ -7,12 +10,15 @@ import { Channel, Message } from '../interfaces';
 export class ChannelsService {
   constructor(private channelsRepository: IChannelsRepository) {}
 
-  async create(channel: Channel): Promise<Channel> {
-    return await this.channelsRepository.create(channel);
+  async create(channel: CreateChannelDTO): Promise<ChannelDTO> {
+    return await this.channelsRepository.create(channel as Channel);
   }
 
-  async addMessage(message: Message, id: string): Promise<Channel> {
-    return await this.channelsRepository.addMessage(message, id);
+  async addMessage(message: CreateMessageDTO, id: string): Promise<ChannelDTO> {
+    return (await this.channelsRepository.addMessage(
+      message as Message,
+      id
+    )) as ChannelDTO;
   }
 
   async findMessages(id: string, limit: number): Promise<Message[]> {

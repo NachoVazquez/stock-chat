@@ -13,6 +13,7 @@ import {
 
 import { Channel, ChannelsService } from '@stock-chat/api/channels/domain';
 import { AuthenticationGuard } from '@stock-chat/api/shared/auth/utils';
+import { ChannelDTO, CreateChannelDTO } from '@stock-chat/shared/dtos';
 
 @UseGuards(AuthenticationGuard)
 @Controller('channels')
@@ -45,13 +46,15 @@ export class ChannelsController {
   }
 
   @Post()
-  async create(@Body() channelToCreate: Channel): Promise<Channel> {
+  async create(@Body() channelToCreate: CreateChannelDTO): Promise<ChannelDTO> {
     if (
       !channelToCreate ||
       (channelToCreate && Object.keys(channelToCreate).length === 0)
     ) {
       throw new HttpException('Missing informations', HttpStatus.BAD_REQUEST);
     }
+
+    console.log(channelToCreate);
 
     const channel = await this.channelsService.create(channelToCreate);
 

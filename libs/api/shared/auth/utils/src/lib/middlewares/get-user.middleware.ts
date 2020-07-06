@@ -17,7 +17,6 @@ export class GetUserMiddleware implements NestMiddleware {
       const user = jwt.verify(authJwtToken, environment.jwtSecret);
 
       if (user) {
-        console.log('Found user details in JWT: ', user);
         req['user'] = user;
       }
     } catch (err) {

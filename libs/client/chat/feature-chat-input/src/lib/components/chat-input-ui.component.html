@@ -1,0 +1,26 @@
+<section class="chat--input">
+  <form
+    class="message--form"
+    [formGroup]="messageForm"
+    (ngSubmit)="doSendMessage()"
+  >
+    <mat-form-field color="accent">
+      <mat-label>Express your mind</mat-label>
+      <input
+        formControlName="message"
+        matInput
+        placeholder="Try /stock={stock_code}"
+      />
+    </mat-form-field>
+
+    <button
+      color="accent"
+      class="submit-button"
+      type="submit"
+      mat-icon-button
+      aria-label="Submit"
+    >
+      <mat-icon>send</mat-icon>
+    </button>
+  </form>
+</section>

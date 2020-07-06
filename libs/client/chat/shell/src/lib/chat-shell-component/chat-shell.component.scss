@@ -1,0 +1,12 @@
+.chat {
+  display: flex;
+  height: 100%;
+
+  stock-chat-channel-list {
+    width: 30%;
+    height: 100%;
+  }
+  .message-area {
+    width: 70%;
+  }
+}

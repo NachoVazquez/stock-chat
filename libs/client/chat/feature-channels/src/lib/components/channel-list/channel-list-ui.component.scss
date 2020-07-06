@@ -1,0 +1,33 @@
+.channel-list {
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #000;
+
+  ul {
+    padding: 0;
+    padding-right: 3rem;
+    padding-top: 3rem;
+    max-height: 80%;
+    overflow: auto;
+  }
+  li {
+    list-style: none;
+    color: #a4a4a4;
+    font-size: 0.88rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 1rem;
+  }
+
+  .selected {
+    color: white;
+  }
+
+  .add-channel--btn {
+    margin-top: auto;
+    margin-bottom: 3rem;
+  }
+}

@@ -14,7 +14,9 @@ import { SignInDTO } from '@stock-chat/shared/dtos';
   ></stock-chat-signin-ui>`,
 })
 export class SignInComponent implements OnInit {
-  constructor(private readonly store$: Store<fromAuth.State>) {}
+  constructor(private readonly store$: Store<fromAuth.State>) {
+    this.store$.dispatch(SignInActions.logout());
+  }
 
   ngOnInit() {}
 

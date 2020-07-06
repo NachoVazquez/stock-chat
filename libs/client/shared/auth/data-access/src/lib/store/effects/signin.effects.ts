@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
@@ -11,7 +12,12 @@ import {
 import { UsersService } from '@stock-chat/client/shared/user/data-access';
 
 import { AuthService } from '../../services/auth.service';
-import { LayoutActions, SignInActions, SignInAPIActions } from '../actions';
+import {
+  LayoutActions,
+  SignInActions,
+  SignInAPIActions,
+  SignUpActions,
+} from '../actions';
 
 @Injectable()
 export class SignInEffects {
@@ -47,7 +53,11 @@ export class SignInEffects {
   logout$ = createEffect(
     () =>
       this.actions$.pipe(
-        ofType(LayoutActions.logout),
+        ofType(
+          LayoutActions.logout,
+          SignInActions.logout,
+          SignUpActions.logout
+        ),
         tap(() => {
           this.authService.logout();
         })
@@ -64,7 +74,12 @@ export class SignInEffects {
           map((userData) =>
             SignInAPIActions.getLoggedUserSuccess({ userData })
           ),
-          catchError(() => of(SignInAPIActions.getLoggedUserFailure()))
+          catchError((error: HttpErrorResponse) => {
+            if (error.status === 401) {
+              this.router.navigate(['/auth/signin']).catch();
+            }
+            return of(SignInAPIActions.getLoggedUserFailure());
+          })
         )
       )
     )

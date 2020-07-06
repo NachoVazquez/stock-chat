@@ -26,7 +26,7 @@ export class SignInUIComponent {
     return this.presenter.emailControl;
   }
 
-  doSignin() {
+  doSignin(): void {
     this.presenter.doSignin();
   }
 }

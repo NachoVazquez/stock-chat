@@ -1,0 +1,11 @@
+<section class="message-list">
+  <h1 class="no-channel-message" *ngIf="channelId == undefined">
+    Select a channel or create a new one
+  </h1>
+
+  <ul>
+    <li *ngFor="let message of messages">
+      <stock-chat-message-ui [message]="message"></stock-chat-message-ui>
+    </li>
+  </ul>
+</section>

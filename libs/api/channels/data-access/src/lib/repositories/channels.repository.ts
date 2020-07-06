@@ -14,6 +14,8 @@ export class ChannelsRepository implements IChannelsRepository {
 
   async create(channel: Channel): Promise<Channel> {
     const createdChannel = new this.channelModel(channel);
+    console.log(createdChannel);
+
     return await createdChannel.save();
   }
 
@@ -22,7 +24,12 @@ export class ChannelsRepository implements IChannelsRepository {
     message.user = message.user._id;
     channel.messages.push(message);
 
-    return await channel.save();
+    return await (await channel.save())
+      .populate({
+        path: 'messages',
+        populate: { path: 'user' },
+      })
+      .execPopulate();
   }
 
   async findMessages(id: string, limit: number): Promise<Message[]> {
@@ -46,7 +53,12 @@ export class ChannelsRepository implements IChannelsRepository {
   }
 
   async findWithLimit(id: string, limit: number): Promise<Channel> {
-    return await this.channelModel.findById(id).slice('messages', limit).exec();
+    return await this.channelModel
+      .findById(id, {})
+      .populate({ path: 'messages', populate: { path: 'user' } })
+      .slice('messages', -limit)
+
+      .exec();
   }
 
   async findById(id: string): Promise<Channel> {

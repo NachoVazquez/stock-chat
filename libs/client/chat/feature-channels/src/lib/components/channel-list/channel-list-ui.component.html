@@ -1,0 +1,22 @@
+<section class="channel-list">
+  <ul>
+    <li
+      (click)="doJoinChannel(channel._id)"
+      [ngClass]="{
+        selected: currentChannel && currentChannel._id === channel._id
+      }"
+      *ngFor="let channel of channels"
+    >
+      # {{ channel.name }}
+    </li>
+  </ul>
+
+  <button
+    class="add-channel--btn"
+    (click)="doAddNewChannel()"
+    mat-fab
+    color="primary"
+  >
+    <mat-icon>add</mat-icon>
+  </button>
+</section>

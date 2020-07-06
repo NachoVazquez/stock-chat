@@ -36,7 +36,6 @@ export class UserRepository implements IUserRepository {
     isSerialized?: boolean
   ): Promise<User | null> {
     let user = await this.userModel.findOne(options, fields).exec();
-    console.log(options);
     if (user && isSerialized) {
       user = user.schema.methods.serialize(user);
     }
