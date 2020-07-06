@@ -24,6 +24,6 @@ jobs:
       - run: git fetch --no-tags --prune --depth=5 origin master
       - run: yarn
 
-      - run: yarn affected:lint --base=origin/master --parallel
+      # - run: yarn affected:lint --base=origin/master --parallel
       - run: yarn affected:build --base=origin/master --parallel --prod
       - run: yarn affected:test --base=origin/master --parallel
