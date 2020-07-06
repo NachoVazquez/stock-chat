@@ -1,11 +1,11 @@
 <nav class="top-bar">
   <h1>Stock Chat</h1>
-  <div *ngIf="isAuthenticated()">
-    <ul>
-      <li *ngFor="let route of routes" [routerLink]="[route.to]">Route.name</li>
-    </ul>
+  <div *ngIf="isAuthenticated">
+    <button (click)="doLogout()" mat-button>
+      {{ loggedUser.name }}
+    </button>
   </div>
-  <div *ngIf="!isAuthenticated()">
+  <div *ngIf="!isAuthenticated">
     <ul>
       <li [routerLink]="['/auth/signin']">Sign In</li>
       <li [routerLink]="['/auth/signup']">Sign Up</li>

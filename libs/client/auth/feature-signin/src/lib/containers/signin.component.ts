@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { select, Store } from '@ngrx/store';
 
+import {
+  reducers as fromAuth,
+  SignInActions,
+} from '@stock-chat/client/shared/auth/data-access';
 import { SignInDTO } from '@stock-chat/shared/dtos';
 
 @Component({
@@ -9,11 +14,11 @@ import { SignInDTO } from '@stock-chat/shared/dtos';
   ></stock-chat-signin-ui>`,
 })
 export class SignInComponent implements OnInit {
-  constructor() {}
+  constructor(private readonly store$: Store<fromAuth.State>) {}
 
   ngOnInit() {}
 
   signin(signinData: SignInDTO): void {
-    console.log(signinData);
+    this.store$.dispatch(SignInActions.signin({ credentials: signinData }));
   }
 }

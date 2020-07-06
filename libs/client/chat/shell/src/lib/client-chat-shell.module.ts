@@ -1,10 +1,11 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule, Route } from '@angular/router';
+import { NgModule } from '@angular/core';
 
-export const clientChatShellRoutes: Route[] = [];
+import { ChatShellComponent } from './chat-shell-component/chat-shell.component.ts';
+import { ClientChatShellRoutingModule } from './client-chat-shell-routing.module';
 
 @NgModule({
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, ClientChatShellRoutingModule],
+  declarations: [ChatShellComponent],
 })
 export class ClientChatShellModule {}

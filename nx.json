@@ -61,7 +61,7 @@
       "tags": ["scope:api", "scope:user", "type:shell"]
     },
     "api-shared-auth-utils": {
-      "tags": ["scope:api", "scope:auth", "type:utils"]
+      "tags": ["scope:api", "scope:shared", "scope:auth", "type:utils"]
     },
     "api-channels-shell": {
       "tags": ["scope:api", "scope:channels", "type:shell"]
@@ -94,7 +94,7 @@
       "tags": ["scope:client", "scope:shared", "scope:layout", "type:ui"]
     },
     "shared-dtos": {
-      "tags": ["scope:shared"]
+      "tags": ["scope:cross", "scope:shared"]
     },
     "client-shared-utils-router": {
       "tags": ["scope:client", "scope:shared", "type:utils"]
@@ -122,6 +122,18 @@
     },
     "client-shared-auth-data-access": {
       "tags": ["scope:client", "scope:shared", "scope:auth", "type:data-access"]
+    },
+    "client-shared-environments": {
+      "tags": ["scope:client", "scope:shared", "type:environments"]
+    },
+    "client-shared-constants": {
+      "tags": ["scope:client", "scope:shared", "type:constants"]
+    },
+    "client-shared-utils": {
+      "tags": ["scope:client", "scope:shared", "type:utils"]
+    },
+    "client-shared-user-data-access": {
+      "tags": ["scope:client", "scope:shared", "scope:user", "tyoe:data-access"]
     }
   }
 }

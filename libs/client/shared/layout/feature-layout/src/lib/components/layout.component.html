@@ -1,6 +1,9 @@
 <section class="layout">
   <mat-toolbar color="primary">
-    <stock-chat-topbar></stock-chat-topbar>
+    <stock-chat-topbar
+      (logout)="logout()"
+      [loggedUser]="user$ | async"
+    ></stock-chat-topbar>
   </mat-toolbar>
   <stock-chat-content></stock-chat-content>
 </section>

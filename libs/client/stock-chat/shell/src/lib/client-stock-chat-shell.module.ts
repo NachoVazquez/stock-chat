@@ -1,29 +1,26 @@
 import { CommonModule } from '@angular/common';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { Route, RouterModule } from '@angular/router';
 
+import { ClientSharedAuthDataAccessModule } from '@stock-chat/client/shared/auth/data-access';
 import { FeatureLayoutModule } from '@stock-chat/client/shared/layout/feature-layout';
-import { SelectivePreloadingStrategyService } from '@stock-chat/client/shared/utils-router';
+import { AuthInterceptor } from '@stock-chat/client/shared/utils';
 
-export const rootRoutes: Route[] = [
-  {
-    path: 'auth',
-    loadChildren: () =>
-      import('@stock-chat/client/auth/shell').then(
-        (m) => m.ClientAuthShellModule
-      ),
-    data: { preload: true },
-  },
-  { path: '', redirectTo: '/auth', pathMatch: 'full' },
-];
+import { ShellChatDataAccessModule } from './shell-chat-data-access.module';
+import { ShellChatRoutingModule } from './shell-chat-routing.module';
 
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule.forRoot(rootRoutes, {
-      preloadingStrategy: SelectivePreloadingStrategyService,
-    }),
+    HttpClientModule,
+    ShellChatRoutingModule,
     FeatureLayoutModule,
+    ClientSharedAuthDataAccessModule,
+
+    ShellChatDataAccessModule,
+  ],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
   ],
   exports: [FeatureLayoutModule],
 })

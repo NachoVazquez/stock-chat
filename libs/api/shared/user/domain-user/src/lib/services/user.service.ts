@@ -1,5 +1,7 @@
 import { Injectable } from '@nestjs/common';
 
+import { CreateUserDTO } from '@stock-chat/shared/dtos';
+
 import { IUserRepository } from '../abstracts';
 import { User } from '../interfaces';
 
@@ -7,7 +9,7 @@ import { User } from '../interfaces';
 export class UsersService {
   constructor(private userRepository: IUserRepository) {}
 
-  async create(user: User): Promise<User> {
+  async create(user: CreateUserDTO): Promise<User> {
     return await this.userRepository.create(user);
   }
 

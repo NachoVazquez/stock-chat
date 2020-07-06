@@ -35,8 +35,8 @@
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "apps/stock-chat/src/environments/environment.ts",
-                  "with": "apps/stock-chat/src/environments/environment.prod.ts"
+                  "replace": "libs/client/shared/environments/src/lib/environment.ts",
+                  "with": "libs/client/shared/environments/src/lib/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -1065,6 +1065,120 @@
             "tsConfig": "libs/client/shared/auth/data-access/tsconfig.spec.json",
             "passWithNoTests": true,
             "setupFile": "libs/client/shared/auth/data-access/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "client-shared-environments": {
+      "projectType": "library",
+      "root": "libs/client/shared/environments",
+      "sourceRoot": "libs/client/shared/environments/src",
+      "prefix": "stock-chat",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/client/shared/environments/tsconfig.lib.json",
+              "libs/client/shared/environments/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/client/shared/environments/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/client/shared/environments/jest.config.js",
+            "tsConfig": "libs/client/shared/environments/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/client/shared/environments/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "client-shared-constants": {
+      "root": "libs/client/shared/constants",
+      "sourceRoot": "libs/client/shared/constants/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/client/shared/constants/tsconfig.lib.json",
+              "libs/client/shared/constants/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/client/shared/constants/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/client/shared/constants/jest.config.js",
+            "tsConfig": "libs/client/shared/constants/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "client-shared-utils": {
+      "root": "libs/client/shared/utils",
+      "sourceRoot": "libs/client/shared/utils/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["libs/client/shared/utils/tsconfig.lib.json"],
+            "exclude": ["**/node_modules/**", "!libs/client/shared/utils/**/*"]
+          }
+        }
+      }
+    },
+    "client-shared-user-data-access": {
+      "projectType": "library",
+      "root": "libs/client/shared/user/data-access",
+      "sourceRoot": "libs/client/shared/user/data-access/src",
+      "prefix": "stock-chat",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/client/shared/user/data-access/tsconfig.lib.json",
+              "libs/client/shared/user/data-access/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/client/shared/user/data-access/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/client/shared/user/data-access/jest.config.js",
+            "tsConfig": "libs/client/shared/user/data-access/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/client/shared/user/data-access/src/test-setup.ts"
           }
         }
       },

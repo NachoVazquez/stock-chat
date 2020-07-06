@@ -1,14 +1,22 @@
 import {
   Body,
   Controller,
+  HttpCode,
   HttpException,
   HttpStatus,
   Post,
   Request,
+  Get,
 } from '@nestjs/common';
 
 import { AuthService } from '@stock-chat/api/auth/domain';
-import { User, UsersService } from '@stock-chat/api/shared/user/domain-user';
+import { UsersService } from '@stock-chat/api/shared/user/domain-user';
+import {
+  CreateUserDTO,
+  SignInDTO,
+  SignInResponseDTO,
+  UserDTO,
+} from '@stock-chat/shared/dtos';
 
 @Controller('auth')
 export class AuthController {
@@ -18,29 +26,38 @@ export class AuthController {
   ) {}
 
   @Post('/signin')
-  async signin(@Request() req): Promise<any> {
-    const body = req.body;
-
-    if (!body) {
+  @HttpCode(200)
+  async signin(@Body() signInData: SignInDTO): Promise<SignInResponseDTO> {
+    if (!signInData) {
       throw new HttpException('Body is missing', HttpStatus.BAD_REQUEST);
     }
-    if (!body.email || !body.password) {
+    if (!signInData.email || !signInData.password) {
       throw new HttpException(
         'Missing email or password',
         HttpStatus.BAD_REQUEST
       );
     }
 
-    return await this.authService.sign(body);
+    return await this.authService.sign(signInData);
   }
 
   @Post('signup')
-  async signup(@Body() user: User) {
+  async signup(@Body() user: CreateUserDTO) {
     if (!user || (user && Object.keys(user).length === 0)) {
       throw new HttpException('Missing informations', HttpStatus.BAD_REQUEST);
     }
-
-    await this.usersService.create(user);
+    try {
+      await this.usersService.create(user);
+    } catch (error) {
+      console.log(JSON.stringify(error));
+      if (error.code === 11000) {
+        throw new HttpException(
+          'User Identifier already exits ' + JSON.stringify(error.keyPattern),
+          HttpStatus.BAD_REQUEST
+        );
+      }
+      throw new HttpException('', HttpStatus.INTERNAL_SERVER_ERROR);
+    }
   }
 
   @Post('/refresh-token')

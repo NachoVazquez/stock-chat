@@ -7,16 +7,23 @@ import {
   HttpStatus,
   Param,
   Put,
+  Req,
   UseGuards,
 } from '@nestjs/common';
 
 import { AuthenticationGuard } from '@stock-chat/api/shared/auth/utils';
 import { User, UsersService } from '@stock-chat/api/shared/user/domain-user';
+import { UserDTO } from '@stock-chat/shared/dtos';
 
 @Controller('users')
 @UseGuards(AuthenticationGuard)
 export class UsersController {
   constructor(private readonly usersService: UsersService) {}
+
+  @Get('/loggedUser')
+  async getLoggedUser(@Req() request: any): Promise<UserDTO> {
+    return request.user.sub;
+  }
 
   @Get()
   async index(): Promise<User[]> {

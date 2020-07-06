@@ -47,7 +47,7 @@ export class AuthService {
     const isValid = await this.checkUserPassword(user, credentials.password);
     if (!isValid) {
       throw new HttpException(
-        'The email/password combinaison is invalid',
+        'The email/password combination is invalid',
         HttpStatus.BAD_REQUEST
       );
     }

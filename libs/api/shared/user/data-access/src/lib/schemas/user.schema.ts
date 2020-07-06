@@ -3,9 +3,9 @@ import { Schema } from 'mongoose';
 import { User } from '@stock-chat/api/shared/user/domain-user';
 
 const user = new Schema({
-  name: String,
-  username: { type: String, required: true, unique: true },
-  email: { type: String, required: true },
+  name: { type: String, required: true, unique: true },
+  username: { type: String },
+  email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
   created_at: { type: Date, default: Date.now },
   updated_at: { type: Date, default: Date.now },
@@ -27,7 +27,7 @@ user.pre('save', function (next) {
 user.methods.serialize = function (userModel: User) {
   return {
     _id: userModel._id,
-    username: userModel.username,
+    name: userModel.name,
     email: userModel.email,
   };
 };

@@ -88,6 +88,18 @@
       ],
       "@stock-chat/client/shared/auth/data-access": [
         "libs/client/shared/auth/data-access/src/index.ts"
+      ],
+      "@stock-chat/client/shared/environments": [
+        "libs/client/shared/environments/src/index.ts"
+      ],
+      "@stock-chat/client/shared/constants": [
+        "libs/client/shared/constants/src/index.ts"
+      ],
+      "@stock-chat/client/shared/utils": [
+        "libs/client/shared/utils/src/index.ts"
+      ],
+      "@stock-chat/client/shared/user/data-access": [
+        "libs/client/shared/user/data-access/src/index.ts"
       ]
     }
   },
