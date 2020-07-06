@@ -9,7 +9,7 @@ export class TopBarPresenter implements OnDestroy {
   logout$: Observable<void> = this.logout.asObservable();
 
   isAuthenticated(loggedUser: UserDTO | undefined): boolean {
-    return loggedUser != undefined;
+    return loggedUser !== undefined;
   }
 
   doLogout(): void {

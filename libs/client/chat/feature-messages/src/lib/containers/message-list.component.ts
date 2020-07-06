@@ -4,8 +4,8 @@ import { Observable, Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
 import {
-  ChatService,
   ChannelSelectors,
+  ChatService,
 } from '@stock-chat/client/chat/data-access';
 import {
   MessageListActions,

@@ -59,6 +59,7 @@ function passwordMatchValidator(form: FormGroup): ValidationErrors | null {
   const confirmPassword = form.get('confirmPassword');
 
   return password && confirmPassword && password.value === confirmPassword.value
-    ? null
+    ? // tslint:disable-next-line: no-null-keyword
+      null
     : { mismatch: true };
 }

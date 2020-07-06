@@ -6,7 +6,6 @@ import {
   HttpStatus,
   Post,
   Request,
-  Get,
 } from '@nestjs/common';
 
 import { AuthService } from '@stock-chat/api/auth/domain';
@@ -15,7 +14,6 @@ import {
   CreateUserDTO,
   SignInDTO,
   SignInResponseDTO,
-  UserDTO,
 } from '@stock-chat/shared/dtos';
 
 @Controller('auth')

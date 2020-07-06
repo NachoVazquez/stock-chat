@@ -1,7 +1,10 @@
 import { Injectable } from '@nestjs/common';
 
-import { CreateMessageDTO, MessageDTO } from '@stock-chat/shared/dtos';
-import { ChannelDTO, CreateChannelDTO } from '@stock-chat/shared/dtos';
+import {
+  ChannelDTO,
+  CreateChannelDTO,
+  CreateMessageDTO,
+} from '@stock-chat/shared/dtos';
 
 import { IChannelsRepository } from '../abstracts';
 import { Channel, Message } from '../interfaces';
